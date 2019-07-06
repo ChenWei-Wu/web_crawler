@@ -8,13 +8,11 @@ target = 'https://www.ptt.cc/bbs/NBA/index.html'   #ptt-NBA-board第一頁
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-#獲取本頁所有貼文的資訊(Q1答案)
-###########################
-title = soup.find_all('div','title')
-###########################
+title = soup.find_all('div' , 'title')
 
 for i in range(len(title)):
-	if(title[i].find('a') != None):
+	if(title[i].find('a') != None): #加入判斷條件式(如果拿到的不是已被刪除帖)
+	
 		#選出此頁的貼文資訊並提取出網址(Q3)
 		################################
 		href = 'https://www.ptt.cc' + title[i].find('a')['href']

@@ -10,18 +10,16 @@ target = 'https://one-piece.cn/comic/'
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-#------------------放Q1的答案-----------------#
-##############################################
-chapters = soup.find('div' , id = 'chapter12')
-##############################################
+a_tags = soup.find('div' , id = 'chapter12').find_all('a')
 
-
-#從 chapters 裡面抓取所有 <a> 標籤
-#---------------------Q2---------------------#
-##############################################
-
-a_tags = chapters.find_all('a')
-
-##############################################
 for a in a_tags:
-	print(a.encode(req.encoding).decode('utf-8'))
+	#從 <a> 標籤中取出"href"連結
+	#ex. 從<a href="/post/10903/" target="_blank">第903话 第五位皇帝</a>中 取出 "/post/10903/"
+	#---------------------Q2--------------------#
+	#############################################
+
+	ep_url = 'https://one-piece.cn' + a['href']
+	
+	#############################################
+	
+	print(ep_url)

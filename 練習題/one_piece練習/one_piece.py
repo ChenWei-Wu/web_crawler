@@ -55,7 +55,7 @@ for a in a_tags :
 	
 	#進入連結(不用改)
 	req = requests.get(url = ep_url , headers = headers)
-	ep = BeautifulSoup(req.text,'html.parser')
+	soup = BeautifulSoup(req.text,'html.parser')
 	
 	
 	#--------------------Q4答案--------------------#

@@ -8,8 +8,8 @@ target = 'https://www.ptt.cc/bbs/NBA/index.html'   #ptt-NBA-board第一頁
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-#獲得下一頁的網址(Q2)
+#獲得上一頁的網址(Q2)
 ###################
-next_page = 'https://www.ptt.cc' + soup.#答案寫這
+last_page = 'https://www.ptt.cc' + soup.#答案寫這
 ###################
-print(next_page)
+print(last_page)

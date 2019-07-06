@@ -10,14 +10,12 @@ target = 'https://one-piece.cn/comic/'
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-#抓取 id 為 chapter12 的 <div> 標籤
-#<div id="chapter12" class="chapter">......</div>
-#---------------------Q1--------------------#
-#############################################
+#從 chapter 12 裡面抓取所有 <a> 標籤
+#---------------------Q1---------------------#
+##############################################
 
-chapters =
+a_tags = 
 
-#############################################
-
-print(chapters.encode(req.encoding).decode('utf-8'))
-
+##############################################
+for a in a_tags:
+	print(a.encode(req.encoding).decode('utf-8'))
