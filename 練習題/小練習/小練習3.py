@@ -8,7 +8,6 @@ req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
 divs = 
-
 for div in divs :
 	src = 
 	print(src)
