@@ -7,10 +7,10 @@ target = 'https://practice2.1mb.site/'   #ptt-NBA-board第一頁
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-divs = soup.find_all('div' , 'movie')
-for div in divs :
-	img = div.img
-	print(img)
+lis = soup.find_all('li')
+for li in lis :
+	text = li.text
+	print(text)
 
 
 

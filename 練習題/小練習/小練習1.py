@@ -6,11 +6,10 @@ headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/2010
 target = 'https://practice2.1mb.site/'   #ptt-NBA-board第一頁
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
-print(soup)
-divs = 
-for div in divs :
-	img = 
-	print(img)
+lis = #程式碼寫這邊
+for li in lis :
+	text = #程式碼寫這邊
+	print(text)
 
 
 
