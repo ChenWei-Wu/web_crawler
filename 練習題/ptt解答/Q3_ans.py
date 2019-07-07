@@ -11,10 +11,16 @@ soup = BeautifulSoup(req.text,'html.parser')
 title = soup.find_all('div' , 'title')
 
 for i in range(len(title)):
-	if(title[i].find('a') != None): #加入判斷條件式(如果拿到的不是已被刪除帖)
-	
-		#選出此頁的貼文資訊並提取出網址(Q3)
-		################################
+	if(title[i].find('a') != None):
+
 		href = 'https://www.ptt.cc' + title[i].find('a')['href']
-		################################
-		print(href)
+		target = href
+		req = requests.get(url = target , headers = headers)
+		soup = BeautifulSoup(req.text , 'html.parser')
+
+		#獲得貼文內容(Q3)
+		###############################
+		content = soup.find('div' , id="main-container").text
+		###############################
+		print(content)
+		break
