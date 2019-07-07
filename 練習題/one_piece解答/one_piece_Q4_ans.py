@@ -11,9 +11,6 @@ all_p = soup.find_all('p')
 for p in all_p:
 	if(p.img != None):  #仿效PTT的練習  寫出判斷式
 
-		#找出圖片的連結
-		#ex.從<img alt="海贼王 第903话 第五位皇帝" src="http://wx3.sinaimg.cn/large/83940082gy1fqs2l5szexj20nm0y6wsm.jpg" />中
-		#   找出"http://wx3.sinaimg.cn/large/83940082gy1fqs2l5szexj20nm0y6wsm.jpg"
 		#---------------------Q4--------------------#
 		#############################################
 

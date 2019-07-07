@@ -10,7 +10,6 @@ target = 'https://one-piece.cn/comic/'
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-#從 chapter 12 裡面抓取所有 <a> 標籤
 #---------------------Q1---------------------#
 ##############################################
 

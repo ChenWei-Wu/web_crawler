@@ -6,7 +6,6 @@ target = 'https://one-piece.cn/post/10903/'
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
-#找出能抓到所有圖片的標籤
 #---------------------Q3--------------------#
 #############################################
 

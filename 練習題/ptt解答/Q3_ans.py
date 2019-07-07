@@ -18,9 +18,9 @@ for i in range(len(title)):
 		req = requests.get(url = target , headers = headers)
 		soup = BeautifulSoup(req.text , 'html.parser')
 
-		#獲得貼文內容(Q3)
-		###############################
+		#-------------------------Q3-------------------------#
+		######################################################
 		content = soup.find('div' , id="main-container").text
-		###############################
+		######################################################
 		print(content)
 		break
