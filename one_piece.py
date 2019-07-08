@@ -17,14 +17,12 @@ if os.path.exists(folder_path):
 else:
 	os.makedirs(folder_path)
 
-#抓取 id 為 chapter12 的 <div> 標籤(Q1)
-chapters = soup.find('div' , id = 'chapter12')
-#####################################
+#--------------------Q1答案--------------------#
+##############################################
 
+a_tags = soup.find('div' , id = 'chapter12').find_all('a')
 
-#從 chapters 裡面抓取所有 <a> 標籤(Q2)
-a_tags = chapters.find_all('a')
-#############################################
+##############################################
 
 j = 0
 now = 0
@@ -36,31 +34,40 @@ for a in a_tags :
 		shutil.rmtree(folder_path)
 	else:
 		os.makedirs(folder_path)
-	########################
 
-	#從 <a href="/post/10903/" target="_blank">第903话 第五位皇帝</a> 中取出"href"連結(Q3)
+	
+	#--------------------Q2答案--------------------#
+	################################################
+
 	ep_url = 'https://one-piece.cn/' + a['href']
-	###################################################################################
 
+	################################################
+	
 	#進入連結(不用改)
 	req = requests.get(url = ep_url , headers = headers)
-	ep = BeautifulSoup(req.text,'html.parser')
-	###############
+	soup = BeautifulSoup(req.text,'html.parser')
+	
+	
+	#--------------------Q3答案--------------------#
+	################################################
 
-	#找出能抓到所有圖片的標籤
-	#---------------------Q4---------------------
-	all_p = ep.find_all('p')
+	all_p = soup.find_all('p')
+
+	################################################
 	
 	i = 0
 	for p in all_p :
 		i += 1
 		#確認在此<p>標籤當中是有<img>標籤的
 		if(p.img != None):
-			#從<img alt="海贼王 第903话 第五位皇帝" src="http://wx3.sinaimg.cn/large/83940082gy1fqs2l5szexj20nm0y6wsm.jpg" />
-			#中找出圖片的連結(Q5)
-			src = p.img['src']
-			#############################################
+			
+			#---------------------Q4答案-------------------#
+			################################################
 
+			src = p.img['src']
+
+			################################################
+			
 			#進行存取  下載(不用改)
 			img_byte = requests.get(src).content
 			file = open(folder_path + str(i).zfill(2) + '.png' , 'wb')
