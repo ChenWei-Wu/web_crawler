@@ -4,7 +4,7 @@ import string
 import os
 import shutil
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
-target = 'https://www.ptt.cc/bbs/NBA/index.html'   #ptt-NBA-board第一頁
+target = 'https://www.ptt.cc/bbs/NBA/index.html'   
 req = requests.get(url=target,headers=headers)
 soup = BeautifulSoup(req.text,'html.parser')
 
@@ -17,14 +17,14 @@ else:
 
 #-----------------Q1-------------------#
 #######################################
-title = soup.
+title = soup.#答案複製到這裡
 #######################################
 #單獨進入各貼文
 for i in range(len(title)):
-	if(): #加入判斷條件式(如果拿到的不是已被刪除帖)
+	if(title[i].find('a') != None): 
 		#---------------------------Q2---------------------------#
 		##########################################################
-		href = 'https://www.ptt.cc' + title[i].
+		href = 'https://www.ptt.cc' + title[i].#答案複製到這裡
 		##########################################################
 			
 		target = href
