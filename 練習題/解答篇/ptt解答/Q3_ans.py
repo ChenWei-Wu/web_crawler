@@ -23,4 +23,3 @@ for i in range(len(title)):
 		content = soup.find('div' , id="main-container").text
 		######################################################
 		print(content)
-		break
